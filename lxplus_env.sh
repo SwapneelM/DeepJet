@@ -1,4 +1,4 @@
-export DEEPJET=`pwd`
+export DEEPJET=`pwd`  # modify to something akin to os.path.dirname(os.path.abspath(__file__))
 
 export PYTHONPATH=$DEEPJET/modules:$PYTHONPATH
 

@@ -3,7 +3,7 @@
 from DeepJetCore.TrainData import TrainData
 from DeepJetCore.TrainData import fileTimeOut as tdfto
 from DeepJetCore.preprocessing import MeanNormApply, MeanNormZeroPad
-from DeepJetCore.stopwatch import stopwatch
+from DeepjetCore.stopwatch import stopwatch
 
 import numpy
 

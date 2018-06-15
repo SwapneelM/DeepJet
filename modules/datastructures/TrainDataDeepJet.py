@@ -1,6 +1,6 @@
 
 
-from DeepJetCore.TrainData import TrainData
+from DeepjetCore.TrainData import TrainData
 from DeepJetCore.TrainData import fileTimeOut as tdfto
 import numpy
 

@@ -15,7 +15,7 @@ class TrainDataDeepJetDelphes(TrainData):
     
     def __init__(self):
         import numpy
-        from DeepJetCore import preprocessing
+        from DeepJetCore.preprocessing import preprocessing
         TrainData.__init__(self)
         
         #setting DeepJet specific defaults
@@ -48,7 +48,7 @@ class TrainDataDeepJetDelphes(TrainData):
         
         sw=stopwatch()
         swall=stopwatch()
-        
+        from DeepJetCore.preprocessing import preprocessing
         import ROOT
         
         fileTimeOut(filename,120) #give eos a minute to recover

@@ -1,6 +1,6 @@
 
 
-from DeepjetCore.TrainData import TrainData
+from DeepJetCore.TrainData import TrainData
 from DeepJetCore.TrainData import fileTimeOut as tdfto
 import numpy
 
@@ -15,7 +15,7 @@ class TrainDataDeepJet(TrainData):
     
     def __init__(self):
         import numpy
-        from DeepJetCore import preprocessing
+        from DeepJetCore.preprocessing import preprocessing
         TrainData.__init__(self)
         
         #setting DeepJet specific defaults
@@ -51,7 +51,7 @@ class TrainDataDeepJet(TrainData):
         
     def getFlavourClassificationData(self,filename,TupleMeanStd, weighter):
         from DeepJetCore.stopwatch import stopwatch
-        
+        from DeepJetCore.preprocessing import preprocessing
         sw=stopwatch()
         swall=stopwatch()
         

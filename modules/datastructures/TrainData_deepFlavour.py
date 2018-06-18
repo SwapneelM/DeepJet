@@ -12,8 +12,8 @@ from keras.layers.pooling import MaxPooling2D
 #from tensorflow.python.ops import control_flow_ops 
 #tensorflow.python.control_flow_ops = control_flow_ops
 
-from TrainDataDeepJet import TrainData_fullTruth
-from TrainDataDeepJet import fileTimeOut,TrainData_QGOnly
+from datastructures.TrainDataDeepJet import TrainData_fullTruth
+from datastructures.TrainDataDeepJet import fileTimeOut,TrainData_QGOnly
 
 class TrainData_deepFlavour_FT(TrainData_fullTruth):
     '''

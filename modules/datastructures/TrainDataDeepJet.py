@@ -15,6 +15,7 @@ class TrainDataDeepJet(TrainData):
     
     def __init__(self):
         import numpy
+        from DeepJetCore import preprocessing
         TrainData.__init__(self)
         
         #setting DeepJet specific defaults
@@ -67,7 +68,7 @@ class TrainDataDeepJet(TrainData):
         Tuple = self.readTreeFromRootToTuple(filename)
         
         
-        x_all = MeanNormZeroPad(filename,TupleMeanStd,self.branches,self.branchcutoffs,self.nsamples)
+        x_all = preprocessing.MeanNormZeroPad(filename,TupleMeanStd,self.branches,self.branchcutoffs,self.nsamples)
         
         #print('took ', sw.getAndReset(), ' seconds for mean norm and zero padding (C module)')
         
@@ -108,7 +109,6 @@ class TrainDataDeepJet(TrainData):
        
     
         
-from DeepJetCore.preprocessing import MeanNormApply, MeanNormZeroPad
 
 class TrainData_Flavour(TrainDataDeepJet):
     '''

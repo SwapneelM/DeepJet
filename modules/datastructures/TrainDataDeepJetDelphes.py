@@ -1,10 +1,6 @@
-
-
 from DeepJetCore.TrainData import TrainData
 from DeepJetCore.TrainData import fileTimeOut as tdfto
-from DeepJetCore.preprocessing import MeanNormApply, MeanNormZeroPad
-from DeepjetCore.stopwatch import stopwatch
-
+from DeepJetCore.stopwatch import stopwatch
 import numpy
 
 def fileTimeOut(fileName, timeOut):
@@ -19,6 +15,7 @@ class TrainDataDeepJetDelphes(TrainData):
     
     def __init__(self):
         import numpy
+        from DeepJetCore import preprocessing
         TrainData.__init__(self)
         
         #setting DeepJet specific defaults
@@ -26,7 +23,6 @@ class TrainDataDeepJetDelphes(TrainData):
         self.undefTruth=[]
         self.referenceclass='isB'
         self.truthclasses=['isB','isC','isUDSG']
-        
         
         #standard branches
         self.registerBranches(self.undefTruth)
@@ -46,12 +42,9 @@ class TrainDataDeepJetDelphes(TrainData):
             dtype=float
             )
         
-             
         self.reduceTruth(None)
         
-        
     def getFlavourClassificationData(self,filename,TupleMeanStd, weighter):
-        
         
         sw=stopwatch()
         swall=stopwatch()
@@ -65,11 +58,9 @@ class TrainDataDeepJetDelphes(TrainData):
         
         #print('took ', sw.getAndReset(), ' seconds for getting tree entries')
     
-        
         Tuple = self.readTreeFromRootToTuple(filename)
         
-        
-        x_all = MeanNormZeroPad(filename,TupleMeanStd,self.branches,self.branchcutoffs,self.nsamples)
+        x_all = preprocessing.MeanNormZeroPad(filename,TupleMeanStd,self.branches,self.branchcutoffs,self.nsamples)
         
         #print('took ', sw.getAndReset(), ' seconds for mean norm and zero padding (C module)')
         
@@ -86,8 +77,6 @@ class TrainDataDeepJetDelphes(TrainData):
             print('neither remove nor weight')
             weights=numpy.empty(self.nsamples)
             weights.fill(1.)
-        
-        
         
         truthtuple =  Tuple[self.truthclasses]
         #print(self.truthclasses)

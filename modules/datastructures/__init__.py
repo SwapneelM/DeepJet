@@ -8,23 +8,15 @@ from pdb import set_trace
 modules = [basename(i.replace('.py','')) for i in glob('%s/[A-Za-z]*.py' % dirname(__file__))]
 print ('\n\ndatastructures modules: ', modules)
 __all__ = []
-print(modules)
 for module_name in modules:
     module = __import__(module_name, globals(), locals(), [module_name])
-    print('\ndatastructures module: ', module)
     for model_name in [i for i in dir(module) if 'TrainData' in i]:
         
         #remove base class
         if 'TrainDataDeepJet' == model_name: continue
         if 'TrainDataDeepJetDelphes' == model_name: continue
         
-        print('datastructures modelname: ', model_name)
         model = getattr(module, model_name)
         globals()[model_name] = model
         locals( )[model_name] = model
         __all__.append(model_name)
-
-        if __all__ is not None:
-            __all__.append(model_name)
-        else:
-            __all__ = [model_name]

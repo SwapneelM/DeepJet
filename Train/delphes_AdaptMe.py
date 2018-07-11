@@ -60,7 +60,7 @@ def myDomAdaptModel(Inputs,nclasses,nregclasses,dropoutRate=0.05):
 train=training_base(testrun=False)
 
 
-print 'Setting model'
+print ('Setting model')
 train.setModel(myDomAdaptModel,dropoutRate=0.1)
 
 train.defineCustomPredictionLabels(['prob_isB','prob_isC','prob_isUDSG',

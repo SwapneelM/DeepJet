@@ -4,7 +4,7 @@ from pdb import set_trace
 
 #also does all the parsing
 train=training_base(testrun=False, collection_class=MultiDataCollection)
-print 'Inited'
+print ('Initialized')
 sizes = train.train_data.sizes
 norm = float(sizes[2])/sizes[1] #normalization because samples have different sizes
 train.train_data.setFlags([[1,0], [0,norm], [0,1]])
@@ -15,7 +15,7 @@ train.val_data.addYs([[0], [1], [0]])
 
 if not train.modelSet():
     from models import dense_model_gradientReversal
-    print 'Setting model'
+    print ('Setting model')
     train.setModel(dense_model_gradientReversal,dropoutRate=0.1)
     
     train.compileModel(

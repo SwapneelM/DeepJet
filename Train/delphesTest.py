@@ -17,7 +17,7 @@ train=training_base(testrun=False)
 
 if  not train.modelSet():
 
-    print 'Setting model'
+    print ('Setting model')
     train.setModel(myDomAdaptModel,dropoutRate=0.1)
     
     train.compileModel(learningrate=0.003,

@@ -1,5 +1,3 @@
-
-
 from DeepJetCore.TrainData import TrainData
 from DeepJetCore.TrainData import fileTimeOut as tdfto
 import numpy
@@ -44,8 +42,6 @@ class TrainDataDeepJet(TrainData):
             dtype=float
             )
         
-        
-             
         self.reduceTruth(None)
         
         
@@ -63,15 +59,10 @@ class TrainDataDeepJet(TrainData):
         self.nsamples=tree.GetEntries()
         
         #print('took ', sw.getAndReset(), ' seconds for getting tree entries')
-    
-        
         Tuple = self.readTreeFromRootToTuple(filename)
-        
-        
         x_all = preprocessing.MeanNormZeroPad(filename,TupleMeanStd,self.branches,self.branchcutoffs,self.nsamples)
         
         #print('took ', sw.getAndReset(), ' seconds for mean norm and zero padding (C module)')
-        
         notremoves=numpy.array([])
         weights=numpy.array([])
         if self.remove:

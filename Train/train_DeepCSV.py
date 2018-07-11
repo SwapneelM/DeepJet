@@ -5,11 +5,11 @@ from Losses import loss_NLL
 
 #also does all the parsing
 train=training_base(testrun=False)
-print 'Inited'
+print ('Initialized')
 
 if not train.modelSet():
     from models import dense_model
-    print 'Setting model'
+    print ('Setting model')
     train.setModel(dense_model,dropoutRate=0.1)
     
     train.compileModel(learningrate=0.003,

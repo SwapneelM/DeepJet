@@ -7,7 +7,7 @@ from pdb import set_trace
 train=training_base(
 	testrun=False, collection_class=MultiDataCollection,
 	)
-print 'Inited'
+print ('Initialized')
 sizes = train.train_data.sizes
 norm = float(sizes[2])/sizes[1] #normalization because samples have different sizes
 train.train_data.setFlags([[1,0], [0,norm], [0,1]])
@@ -18,7 +18,7 @@ train.val_data.addYs([[[0,0]], [[1,0]], [[0,1]]])
 
 if not train.modelSet():
     from models import dense_model_moments
-    print 'Setting model'
+    print ('Setting model')
     train.setModel(dense_model_moments, dropoutRate=0.1)
     
     train.compileModel(

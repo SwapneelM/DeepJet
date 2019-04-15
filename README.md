@@ -16,7 +16,7 @@ Usage
 After logging in, please source the right environment (please cd to the directory first!):
 ```
 cd DeepJet
-source lxplus_env.sh
+source lxplus_env.sh  # currently we work with the CPU version
 ```
 
 
@@ -32,10 +32,9 @@ The preparation for the training consists of the following steps
   convertFromRoot.py -i /path/to/the/root/ntuple/list_of_root_files.txt -o /output/path/that/needs/some/disk/space -c TrainData_deepCSV
   ```
   You can create your own class and utilise `-c TrainData_myclass` eventually.
+  This conversion can take a while (~5-9 mins. on lxplus for a file of ~700MB).
   
-  This step can take a while.
-  
-- prepare the training file and the model. Please refer to DeepJet/Train/XXX_template.reference.py
+- prepare the training file and the model. Please refer to `DeepJet/Train/TrainData_deepCSV.py`
 
 
 Training

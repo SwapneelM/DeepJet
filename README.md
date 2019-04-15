@@ -15,8 +15,8 @@ Usage
 
 After logging in, please source the right environment (please cd to the directory first!):
 ```
-cd <your working dir>/DeepJet
-source lxplus_env.sh / gpu_env.sh
+cd DeepJet
+source lxplus_env.sh
 ```
 
 

@@ -23,20 +23,18 @@ source lxplus_env.sh
 The preparation for the training consists of the following steps
 ====
 
-- define the data structure for the training (example in modules/datastructures/TrainData_template.py)
-  for simplicity, copy the file to TrainData_template.py and adjust it. 
-  Define a new class name (e.g. TrainData_template), leave the inheritance untouched
+- define the data structure for the training (example at `modules/datastructures/TrainData_DeepJet.py`)
+  for simplicity, copy the file to `TrainData_your_template.py` and adjust it. 
+  Define a new class name (e.g. TrainData_your_template), **leave the inheritance from the original `TrainData_DeepJet` file untouched**
   
-- convert the root file to the data strucure for training using DeepJetCore tools:
+- convert the root file to the data strucure for training from `DeepJetCore/bin`:
   ```
   convertFromRoot.py -i /path/to/the/root/ntuple/list_of_root_files.txt -o /output/path/that/needs/some/disk/space -c TrainData_myclass
   ```
   
   This step can take a while.
-
-
-- prepare the training file and the model. Please refer to DeepJet/Train/XXX_template.reference.py
   
+- prepare the training file and the model. Please refer to DeepJet/Train/XXX_template.reference.py
 
 
 Training

@@ -29,8 +29,9 @@ The preparation for the training consists of the following steps
   
 - convert the root file to the data strucure for training from `DeepJetCore/bin`:
   ```
-  convertFromRoot.py -i /path/to/the/root/ntuple/list_of_root_files.txt -o /output/path/that/needs/some/disk/space -c TrainData_myclass
+  convertFromRoot.py -i /path/to/the/root/ntuple/list_of_root_files.txt -o /output/path/that/needs/some/disk/space -c TrainData_DeepJet
   ```
+  You can create your own class and utilise `-c TrainData_myclass` eventually.
   
   This step can take a while.
   
